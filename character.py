@@ -12,7 +12,7 @@ class Character:
         opposant.pv -= random_attack
         message =f"{self.nom} attaque et inflige {random_attack} points à {opposant.nom}"
         if opposant.pv >0:
-            message += f"({opposant.pv} points restant)"
+            message += f" ({opposant.pv} points restant)"
         print(message)
             
         

@@ -1,7 +1,7 @@
 from character import Character
 
 class Enemy(Character):
-    def __init__(self, nom = "Dragon", pv = 80) -> None:
+    def __init__(self, nom, pv = 80) -> None:
         super().__init__(nom, pv)
         
         self.pv = pv
