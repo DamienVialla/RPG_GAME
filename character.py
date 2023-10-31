@@ -13,7 +13,7 @@ class Character:
     def attack(self, opposant):
         random_attack = random.randint(10, 20)
         opposant.pv -= random_attack
-        print(f"\n{random_attack} points ont été enlevé à {opposant.nom} ")
+        print(f"{self.nom} attaque et inflige {random_attack} points à {opposant.nom} ({opposant.pv} points restant) ")
         if opposant.pv <= 0:
             print(f"\n{opposant.nom} est MORT!!!!!!")
             sys.exit()

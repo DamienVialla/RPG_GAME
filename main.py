@@ -27,14 +27,10 @@ def main():
         choice = input("Choisissez une option: ")
         
         if choice == "1":
+            print()
             hero.attack(monster_1)
-            
-            print("\n###Infos Ennemi###")
-            print(monster_1)
-            
             monster_1.attack(hero)
-            print("###Infos Héros###")
-            print(hero)
+
     
 
     
