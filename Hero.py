@@ -22,13 +22,13 @@ class Hero(Character):
                 sys.exit()
             else:
                 self.upgrade()
-                
     
     def upgrade(self):
         self.degat +=5
         self.xp +=25
-        if self.xp ==50:
+        if self.xp  % 50 == 0:
             self.niveau +=1
+            self.pv += 20
         print(self)
                     
     def attack(self, opposant):
@@ -37,5 +37,6 @@ class Hero(Character):
             print(f"\n{opposant.nom} est MORT!!!!!!")
             opposant.full_pv()
             self.continuer()
-    
+
+        
     

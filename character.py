@@ -8,7 +8,9 @@ class Character(ABC):
     
     
     def attack(self, opposant):
-        random_attack = random.randint(10, 20)
+        low_attack = 10 
+        high_attack = 20
+        random_attack = (random.randint(low_attack, high_attack)) + (self.degat * 1.05)
         opposant.pv -= random_attack
         message =f"{self.nom} attaque et inflige {random_attack} points à {opposant.nom}"
         if opposant.pv >0:
