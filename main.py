@@ -1,5 +1,5 @@
 from character import Character
-from enemy import Enemy
+from dragon import Dragon
 from hero import Hero
 
 def main():
@@ -10,7 +10,7 @@ def main():
     hero_name = input("Entre le nom de votre héros: ")
     
     hero = Hero(hero_name)
-    monster_1 = Enemy()
+    monster_1 = Dragon()
     
     print("")
     print("###Infos Héros###")

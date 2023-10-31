@@ -1,12 +1,11 @@
 from character import Character
+from dragon import Dragon
 import random
 import sys
 class Hero(Character):
     def __init__(self, nom, degat =0, xp =0, niveau =1, pv = 100, ) -> None:
         super().__init__(nom, pv)
         
-        self.nom = nom
-        self.pv = pv
         self.degat = degat
         self.xp = xp
         self.niveau = niveau
@@ -23,6 +22,7 @@ class Hero(Character):
                 sys.exit()
             else:
                 self.upgrade()
+                
     
     def upgrade(self):
         self.degat +=5
@@ -35,6 +35,7 @@ class Hero(Character):
         super().attack(opposant)
         if opposant.pv <= 0:
             print(f"\n{opposant.nom} est MORT!!!!!!")
+            
             self.continuer()
     
     

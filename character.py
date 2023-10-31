@@ -1,7 +1,7 @@
 from abc import ABC, abstractclassmethod
 import random
 
-class Character:
+class Character(ABC):
     def __init__(self, nom : str, pv: int) -> None:
         self.nom = nom
         self.pv = pv
