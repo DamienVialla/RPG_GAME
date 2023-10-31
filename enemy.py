@@ -14,3 +14,11 @@ class Enemy(Character):
     
     def attack(self, opposant):
         super().attack(opposant)
+        if opposant.pv <= 0:
+            print(f"\n{opposant.nom} est MORT!!!!!!")
+            opposant.continuer()
+        
+        if self.pv <= 0:
+            print(f"\n{self.nom} est MORT!!!!!!")
+            self.full_pv()
+
