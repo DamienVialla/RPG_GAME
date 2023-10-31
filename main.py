@@ -29,7 +29,7 @@ def main():
         if choice == "1":
             print()
             hero.attack(monster_1)
-            #monster_1.attack(hero)
+            monster_1.attack(hero)
             
             
 
