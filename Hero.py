@@ -35,7 +35,7 @@ class Hero(Character):
         super().attack(opposant)
         if opposant.pv <= 0:
             print(f"\n{opposant.nom} est MORT!!!!!!")
-            
+            opposant.full_pv()
             self.continuer()
     
     
