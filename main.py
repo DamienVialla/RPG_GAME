@@ -29,12 +29,13 @@ def main():
         if choice == "1":
             hero.attack(monster_1)
             
-            print("###Infos Ennemi###")
+            print("\n###Infos Ennemi###")
             print(monster_1)
             
-        
+            monster_1.attack(hero)
+            print("###Infos Héros###")
+            print(hero)
     
-    
-    
+
     
 main()
