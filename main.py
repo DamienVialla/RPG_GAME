@@ -28,38 +28,36 @@ def main():
         #l'utilisation d'un objet d'inventaire passe un tour d'attaque
         for item in hero.inventaire: 
             print(f"{hero.inventaire.index(item)+2} - Utiliser {item}") #index+2 car 0 n'existe pas et 1 est forcément attaque
-                
-        choice = input("Choisissez une option: ")
         
-        #rendre dynamique le traitement du choix en fonction de la boucle ci-dessus => A FAIRE
-        if choice == "1":
+        # retransforme le choix en index dans la liste pour aller tester l'objet choisi      
+        print()
+        choice = int(input("Choisissez une option: "))-2
+        
+        # attaquer n'étant pas dans la liste et se trouvant tout le temps en choix 1, étant donné qu'on enlève 2, on test la valeur -1
+        if choice == -1:
+            choice_final = "attaquer"
+        else :
+            choice_final = hero.inventaire[choice] # le choix final est donc l'objet et pas l'index i qu'on a incrémenté
+      
+      
+        if choice_final == "attaquer":
             print()
             hero.attack(monster_1)
             monster_1.attack(hero)
-        
-        if choice == "2":
+        elif choice_final == "potion":
             print()
             hero.potion_soin()
             monster_1.attack(hero)
-        
-        if choice == "3":
+        elif choice_final == "arme":
             print()
-            #méthode pour vider inventaire de arme et augmenter les degat
+            hero.arme()
             monster_1.attack(hero)
         
-        if choice == "4":
+        elif choice_final == "armure":
             print()
-            #méthode pour vider inventaire de armure et diminue attaque
+            hero.armure(monster_1)
             monster_1.attack(hero)
-        
-        if choice == "5":
-            print()
-            #méthode pour vider inventaire de casque et diminue attaque
-            monster_1.attack(hero)
-            
+    
             
 
-    
-
-    
 main()

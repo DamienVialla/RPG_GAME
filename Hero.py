@@ -8,8 +8,8 @@ class Hero(Character):
 
     liste_mort = ["potion","arme","armure"] #liste des objets que peut donner un monstre quand il meurt
     
-    #init de la classe, inventaire rentré en dur pour les tests
-    def __init__(self, nom, inventaire = ["potion","casque"], mort = False, degat =0, xp =0, niveau =1, pv = PV_hero, ) -> None:
+    #init de la classe
+    def __init__(self, nom, inventaire = [], mort = False, degat =0, xp =0, niveau =1, pv = PV_hero, ) -> None:
         super().__init__(nom, pv)
         
         self.degat = degat
@@ -28,6 +28,7 @@ class Hero(Character):
     
     #fin de partie, on propose au joueur d'en refaire une
     def continuer(self):
+        print()
         rejoue = input("Souhaitez-vous faire une partie supplémentaire (O/N) ? ")
         if rejoue != "O" and rejoue != "N":
             print(f"{rejoue} n'est pas un caractère autorisé")
@@ -59,10 +60,17 @@ class Hero(Character):
         super().attack(opposant)
         if opposant.pv <= 0: # test si opposant est mort
             opposant.full_pv() # remet les points de vie
-            objet = random.choice(self.liste_mort) # donne un objet aléatoire dans la liste
-            self.inventaire.append(objet) # on ajoute cet objet à l'inventaire
-            print(f"\n{opposant.nom} est MORT et vous offre {objet} !!!!!!")
-            print(f"{self.inventaire}")
+            objet = random.choice(self.liste_mort) # objet prend une objet aléatoire dans la liste
+            phrase_ajout_objet = f"\n{opposant.nom} est MORT et il vous offre {objet} !!!"
+            if objet in self.inventaire : # test si objet déjà dans inventaire
+                phrase_ajout_objet += f" Vous en avez déjà {objet} dans votre inventaire, {objet} ne peut pas être ajouté"
+                print(phrase_ajout_objet)
+            else :
+                self.inventaire.append(objet) # on ajoute cet objet à l'inventaire.
+                print(phrase_ajout_objet)
+            
+            print()
+            print(f"Voici votre inventaire actuel : {self.inventaire}")
             self.continuer()
         
         if self.pv <= 0: # test si on est mort
