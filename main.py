@@ -9,8 +9,8 @@ def main():
     print("")
     hero_name = input("Entre le nom de votre héros: ")
     
-    hero = Hero(hero_name)
-    monster_1 = Dragon()
+    hero = Hero(hero_name) #instanciation hero
+    monster_1 = Dragon() #instanciation code
     
     print("")
     print("###Infos Héros###")
@@ -23,22 +23,15 @@ def main():
     while True:
         i=1
         print("\nOptions:")
-        print("1 - Attaquer ?")
-        if "potion" in hero.inventaire:
-            print("2 - Utiliser potion soin ?")
-                
-        if "arme" in hero.inventaire:
-            print("3 - Utiliser arme ?")
-            
-        if "armure" in hero.inventaire:
-            print("4 - Utiliser armure ?")
-        
-        if "casque" in hero.inventaire:
-            print("5 - Utiliser casque ?")
-            
+        print(f"{i} - Attaquer ?")
+        #on boucle sur l'inventaire du héro pour proposer ce qu'il a dans sa besace
+        #l'utilisation d'un objet d'inventaire passe un tour d'attaque
+        for item in hero.inventaire: 
+            print(f"{hero.inventaire.index(item)+2} - Utiliser {item}") #index+2 car 0 n'existe pas et 1 est forcément attaque
                 
         choice = input("Choisissez une option: ")
         
+        #rendre dynamique le traitement du choix en fonction de la boucle ci-dessus => A FAIRE
         if choice == "1":
             print()
             hero.attack(monster_1)
@@ -46,7 +39,7 @@ def main():
         
         if choice == "2":
             print()
-            #méthode pour vider inventaire de potion et augmenter les pv
+            hero.potion_soin()
             monster_1.attack(hero)
         
         if choice == "3":

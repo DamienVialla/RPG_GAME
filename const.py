@@ -1,2 +1,13 @@
 PV_hero = 80
 PV_dragon = 20
+low_attack = 10 
+high_attack = 20
+low_soin = 15
+high_soin = 30
+low_arme = 5
+high_arme = 10
+augmentation_degat = 5
+augmentation_xp = 25
+augmentation_pv = 20
+low_degat = 5
+high_degat = 10
