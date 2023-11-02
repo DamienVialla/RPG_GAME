@@ -103,8 +103,8 @@ class Hero(Character):
         self.inventaire.remove("armure") # on enlève arme dans l'inventaire
         mess_armure = f"{opposant.nom} a ses attaques diminuées de " 
         opposant.degat -= random.randint(low_degat,high_degat) # on randomise la diminution des dégats de l'opposant. Attention il faudrait défaquer cette augmentation au prochain niveau sinon c'est exponentiel le truc
-        mess_degat += f"{opposant.degat} points."
-        print(mess_degat) # on informe
+        mess_armure += f"{opposant.degat} points."
+        print(mess_armure) # on informe
          
 
         
