@@ -1,8 +1,13 @@
 from character import Character
 from dragon import Dragon
 from hero import Hero
+import pygame
+
 
 def main():
+    pygame.mixer.init()
+    pygame.mixer.music.load("damien.mp3")
+    pygame.mixer.music.play()
     print("")
     print("BIENVUE AU MEILLEUR JEU DU MONDE")
     print("#" * len("BIENVUE AU MEILLEUR JEU DU MONDE"))
