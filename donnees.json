@@ -1,0 +1,39 @@
+[
+    {
+        "nom": "Damien",
+        "inventaire" : ["potion","armure","arme"],
+        "mort" : true,
+        "degat" : 0,
+        "xp": 10,
+        "niveau" : 1,
+        "pv" : 100
+    
+    },
+    {
+        "nom": "Aurelie",
+        "inventaire" : ["potion","arme"],
+        "mort" : true,
+        "degat" : 10,
+        "xp": 100,
+        "niveau" : 3,
+        "pv" : 250
+    },
+    {
+        "nom": "Clem",
+        "inventaire" : ["potion"],
+        "mort" : true,
+        "degat" : 0,
+        "xp": 25,
+        "niveau" : 10,
+        "pv" : 250
+    },
+    {
+        "nom": "Bats",
+        "inventaire" : [],
+        "mort" : true,
+        "degat" : 30,
+        "xp": 25,
+        "niveau" : 3,
+        "pv" : 500
+    }
+]

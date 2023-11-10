@@ -2,6 +2,7 @@ from character import Character
 from dragon import Dragon
 from hero import Hero
 import pygame
+from importer import importer, listing
 
 
 def main():
@@ -26,8 +27,10 @@ def main():
     print(monster_1)
     
     while True:
-        i=1
+        i=0
         print("\nOptions:")
+        print(f"{i} - Importer dossier")
+        i+=1
         print(f"{i} - Attaquer ?")
         #on boucle sur l'inventaire du héro pour proposer ce qu'il a dans sa besace
         #l'utilisation d'un objet d'inventaire passe un tour d'attaque
@@ -41,11 +44,20 @@ def main():
         # attaquer n'étant pas dans la liste et se trouvant tout le temps en choix 1, étant donné qu'on enlève 2, on test la valeur -1
         if choice == -1:
             choice_final = "attaquer"
+        elif choice == -2:
+            choice_final = "importer"
         else :
             choice_final = hero.inventaire[choice] # le choix final est donc l'objet et pas l'index i qu'on a incrémenté
       
-      
-        if choice_final == "attaquer":
+        if choice_final =="importer":
+            listing = importer()
+            choix = input("Quel nom de personnage souhaitez-vous incarner ?")
+            if choix not in listing:
+                print("Rentrez un nom valide")
+            else :
+                hero=Hero(nom = ,inventaire = ,mort = ,degat =, xp = , niveau = ,pv =)
+            
+        elif choice_final == "attaquer":
             print()
             hero.attack(monster_1)
             monster_1.attack(hero)
